@@ -10,7 +10,7 @@ service PingService {
 	 * Respond with 'pong'
 	 */
 	 string ping() throws (
-	 	1: finatra_thrift_exceptions.ClientError clientError,
+	 		1: finatra_thrift_exceptions.ClientError clientError,
     	2: finatra_thrift_exceptions.ServerError serverError
 	 )
 }
