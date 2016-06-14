@@ -1,5 +1,5 @@
 namespace java com.swissguard.user.thriftjava
-#@namespace scala com.swissguard.user.thriftjava
+#@namespace scala com.swissguard.user.thriftscala
 
 include "finatra-thrift/finatra_thrift_exceptions.thrift"
 
