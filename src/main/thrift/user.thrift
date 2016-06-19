@@ -26,6 +26,11 @@ service UserService {
     2: finatra_thrift_exceptions.ServerError serverError
   )
 
+  list<UserResponse> listUsers(1:UserRequest user) throws (
+    1: finatra_thrift_exceptions.ClientError clientError,
+    2: finatra_thrift_exceptions.ServerError serverError
+  )
+
   bool validateToken(1:string token) throws (
     1: finatra_thrift_exceptions.ClientError clientError,
     2: finatra_thrift_exceptions.ServerError serverError
