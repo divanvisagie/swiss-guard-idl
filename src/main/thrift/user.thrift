@@ -3,7 +3,7 @@ namespace java com.swissguard.user.thriftjava
 
 include "finatra-thrift/finatra_thrift_exceptions.thrift"
 
-struct UserRequest {
+struct AuthenticationRequest {
   1: string username,
   2: string password
 }
@@ -16,12 +16,12 @@ struct UserResponse {
 
 service UserService {
 
-  UserResponse createUser(1:UserRequest user) throws (
+  string register(1:AuthenticationRequest user) throws (
     1: finatra_thrift_exceptions.ClientError clientError,
     2: finatra_thrift_exceptions.ServerError serverError
   )
 
-  UserResponse login(1:UserRequest user) throws (
+  string login(1:AuthenticationRequest user) throws (
     1: finatra_thrift_exceptions.ClientError clientError,
     2: finatra_thrift_exceptions.ServerError serverError
   )
