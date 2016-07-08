@@ -14,6 +14,12 @@ struct RegistrationRequest {
   3: string email
 }
 
+struct Claims {
+  1: string userId,
+  2: string username,
+  3: list<string> claims
+}
+
 service AuthenticationService {
 
   string register(1:RegistrationRequest registrationRequest) throws (
@@ -25,5 +31,14 @@ service AuthenticationService {
     1: finatra_thrift_exceptions.ClientError clientError,
     2: finatra_thrift_exceptions.ServerError serverError
   )
-}
 
+  bool validateToken(1:string token) throws (
+    1: finatra_thrift_exceptions.ClientError clientError,
+    2: finatra_thrift_exceptions.ServerError serverError
+  )
+
+  Claims claimsForToken(1: string token) throws (
+    1: finatra_thrift_exceptions.ClientError clientError,
+    2: finatra_thrift_exceptions.ServerError serverError
+  )
+}
