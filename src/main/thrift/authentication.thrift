@@ -22,7 +22,7 @@ struct Claims {
 
 service AuthenticationService {
 
-  string register(1:RegistrationRequest registrationRequest) throws (
+  bool register(1:RegistrationRequest registrationRequest) throws (
     1: finatra_thrift_exceptions.ClientError clientError,
     2: finatra_thrift_exceptions.ServerError serverError
   )
