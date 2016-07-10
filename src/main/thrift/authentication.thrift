@@ -37,6 +37,11 @@ service AuthenticationService {
     2: finatra_thrift_exceptions.ServerError serverError
   )
 
+  bool invalidateToken(1:string token) throws (
+    1: finatra_thrift_exceptions.ClientError clientError,
+    2: finatra_thrift_exceptions.ServerError serverError
+  )
+
   Claims claimsForToken(1: string token) throws (
     1: finatra_thrift_exceptions.ClientError clientError,
     2: finatra_thrift_exceptions.ServerError serverError
